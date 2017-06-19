@@ -47,11 +47,7 @@
 </form>
 </div>
 <div class="row">
-
-  <span *ngIf="noData; else noDataToShow">
-    <h2 id="noDataToShow">No Data to Show</h2>
-  </span>
-  <span *ngIf="!validation; else Valid" #noDataToShow>
+  <span *ngIf="!validation; else Valid">
     <h2 id="Valid">No Data to Show</h2>
   </span>
   <ng-template #Valid>

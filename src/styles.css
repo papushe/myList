@@ -8,9 +8,6 @@ input[type=submit]{
 .submitButton{
   text-align: center;
 }
-#noDataToShow, #Valid{
+#Valid{
   text-align: center;
-}
-#noDataToShow{
-  color: red;
 }

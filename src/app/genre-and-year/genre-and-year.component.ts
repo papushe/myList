@@ -13,7 +13,6 @@ export class GenreAndYearComponent implements OnInit {
   comedyName: '';
   year: number;
   validation = false;
-  noData =  false;
   constructor(private _myListService: MyListService) {}
 
   ngOnInit() {
@@ -22,11 +21,10 @@ export class GenreAndYearComponent implements OnInit {
     this._myListService.postByGenresAndYear(genre, year).subscribe(data => {
       this.randomDataModel = data.movies;
       if (this.randomDataModel) {
-        this.noData = false;
+        this.validation = true;
         return;
       }
-      this.validation = true;
-      this.noData = true;
+      this.validation = false;
     });
   }
 

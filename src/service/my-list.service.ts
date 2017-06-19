@@ -22,7 +22,6 @@ export class MyListService {
     return this._http
       .post('https://vod-my-list-web-service-alex.herokuapp.com/getMovieByOrderNum/', {order_num: orderNumber})
       .map(this.extractData)
-      .do(this.logResponse)
       .catch(this.catchError)
   }
 
@@ -30,7 +29,6 @@ export class MyListService {
     return this._http
       .post('https://vod-my-list-web-service-alex.herokuapp.com/getMovieGenreYear/', {genre: genre, year: year})
       .map(this.extractData)
-      .do(this.logResponse)
       .catch(this.catchError)
   }
 
