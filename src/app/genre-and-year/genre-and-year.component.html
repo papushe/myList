@@ -1,0 +1,61 @@
+<form #f="ngForm"
+      (ngSubmit)="onSubmit(f.value)">
+  <div class="row">
+    <div class="col-md-4 col-sm-4 form-group">
+      <select class="form-control"
+              name="genres"
+              required
+              ngModel>
+        <option value="" disabled>Select Genres</option>
+        <option value="Action">Action</option>
+        <option value="Comedy">Comedy</option>
+        <option value="Drama">Drama</option>
+        <option value="Romance">Romance</option>
+        <option value="Horror">Horror</option>
+        <option value="Adventure">Adventure</option>
+        <option value="Crime">Crime</option>
+        <option value="Thriller">Thriller</option>
+        <option value="Animation">Animation</option>
+        <option value="Mystery">Mystery</option>
+        <option value="18+">18+</option>
+      </select>
+    </div>
+    <div class="col-md-4 col-sm-4 form-group">
+      <input type="number"
+             placeholder="Insert Year"
+             class="form-control"
+             name="year"
+             required
+             ngModel>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <input class="btn btn-success" type="submit" value="Send">
+    </div>
+  </div>
+</form>
+
+<ul *ngFor="let Data of allData">
+  <li>
+    <div class="col-md-4 col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{Data.title}}<span>{{Data.order_num}}</span> </h3>
+        </div>
+        <div class="panel-body">
+          <h6><span>Status:</span> {{Data.status}}</h6>
+          <h6><span>Language:</span> {{Data.language}}</h6>
+          <h6><span>Run Time:</span> {{Data.runtime}}</h6>
+          <h6><span>Country:</span> {{Data.country}}</h6>
+          <h6><span>Genres:</span> {{Data.genres}}</h6>
+          <h6><span>Stars:</span> {{Data.stars}}</h6>
+          <h6><span>Year Start:</span> {{Data.year.start}}</h6>
+          <h6><span>Year Released:</span> {{Data.year.released}}</h6>
+          <h5><span>Some Details:</span></h5>
+          <p>{{Data.details}}</p>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>

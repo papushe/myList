@@ -1,0 +1,23 @@
+<ul>
+  <li *ngFor="let Data of allData">
+    <div class="col-md-12 col-sm-12">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">{{Data.title}}<span>{{Data.order_num}}</span> </h3>
+      </div>
+      <div class="panel-body">
+        <h6><span>Status:</span> {{Data.status}}</h6>
+        <h6><span>Language:</span> {{Data.language}}</h6>
+        <h6><span>Run Time:</span> {{Data.runtime}}</h6>
+        <h6><span>Country:</span> {{Data.country}}</h6>
+        <h6><span>Genres:</span> {{Data.genres}}</h6>
+        <h6><span>Stars:</span> {{Data.stars}}</h6>
+        <h6><span>Year Start:</span> {{Data.year.start}}</h6>
+        <h6><span>Year Released:</span> {{Data.year.released}}</h6>
+        <h5><span>Some Details:</span></h5>
+        <p>{{Data.details}}</p>
+      </div>
+    </div>
+    </div>
+  </li>
+</ul>

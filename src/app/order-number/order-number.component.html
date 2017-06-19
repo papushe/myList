@@ -1,0 +1,53 @@
+<form #f="ngForm"
+  (ngSubmit)="onSubmit(f.value)">
+  <div class="row">
+    <div class="col-md-4 col-sm-4"></div>
+    <div class="col-md-4 col-sm-4 form-group">
+      <input type="number"
+             placeholder="Insert Number"
+             class="form-control"
+             name="order"
+             min="1"
+             max="14"
+             required
+             ngModel>
+    </div>
+    <div class="col-md-4 col-sm-4"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-sm-4"></div>
+    <div class="col-md-4 col-sm-4">
+      <input class="btn btn-success" type="submit" value="Send">
+    </div>
+    <div class="col-md-4 col-sm-4"></div>
+  </div>
+</form>
+
+<!--<span *ngIf="!a; else d">-->
+  <!--no data to show-->
+<!--</span>-->
+<!--<ng-template #d>-->
+<ul *ngFor="let Data of hack(allData)">
+  <li >
+    <div class="col-md-4 col-sm-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{Data.title}}</h3>
+        </div>
+        <!--<div class="panel-body">-->
+          <!--<h6><span>Status:</span> {{Data.status}}</h6>-->
+          <!--<h6><span>Language:</span> {{Data.language}}</h6>-->
+          <!--<h6><span>Run Time:</span> {{Data.runtime}}</h6>-->
+          <!--<h6><span>Country:</span> {{Data.country}}</h6>-->
+          <!--<h6><span>Genres:</span> {{Data.genres}}</h6>-->
+          <!--<h6><span>Stars:</span> {{Data.stars}}</h6>-->
+          <!--<h6><span>Year Start:</span> {{Data.year.start}}</h6>-->
+          <!--<h6><span>Year Released:</span> {{Data.year.released}}</h6>-->
+          <!--<h5><span>Some Details:</span></h5>-->
+          <!--<p>{{Data.details}}</p>-->
+        <!--</div>-->
+      </div>
+    </div>
+  </li>
+</ul>
+<!--</ng-template>-->
