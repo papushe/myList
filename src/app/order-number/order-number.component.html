@@ -1,9 +1,9 @@
 <div class="row">
-  <div class="col-md-4"></div>
-  <div class="col-md-4">
     <form #form="ngForm"
           (ngSubmit)="onSubmit(form.value)">
-        <div class="form-group">
+      <div class="row">
+        <div class="col-md-4 col-sm-4"></div>
+        <div class="col-md-4 col-sm-4 form-group">
           <input type="number"
                  placeholder="Insert Number 1 - 14"
                  class="form-control"
@@ -12,18 +12,25 @@
                  max="14"
                  required
                  ngModel>
+        </div>
+        <div class="col-md-4 col-sm-4"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-sm-4"></div>
+        <div class="col-md-4 col-sm-4 submitButton">
           <input class="btn btn-success" type="submit" value="Send" [disabled]="!form.form.valid">
         </div>
         <div class="col-md-4 col-sm-4"></div>
+      </div>
     </form>
-  </div>
-  <div class="col-md-4"></div>
 </div>
-
 <div class="row">
-  <div class="col-md-4"></div>
-  <div class="col-md-4 trackData">
-    <span *ngIf="!validation; else Valid"></span>
+  <div class="col-md-4 col-sm-4"></div>
+  <div class="col-md-4 col-sm-4 trackData">
+
+    <span *ngIf="!validation; else Valid">
+    <h2 id="Valid">No Data to Show</h2>
+  </span>
     <ng-template #Valid>
         <div class="panel panel-primary">
           <div class="panel-heading">
@@ -44,5 +51,5 @@
         </div>
     </ng-template>
   </div>
-  <div class="col-md-4"></div>
+  <div class="col-md-4 col-sm-4"></div>
 </div>

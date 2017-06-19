@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MyListService} from 'service/my-list.service';
-import {oneTrackModel} from 'service/oneTrackModel';
+import {OneTrackModel} from 'service/OneTrackModel';
 
 
 
@@ -11,7 +11,8 @@ import {oneTrackModel} from 'service/oneTrackModel';
 })
 export class OrderNumberComponent implements OnInit {
 
-  trackData: oneTrackModel[];
+  // order: number;
+  trackData: OneTrackModel[];
   validation = false;
   constructor(private _myListService: MyListService) {}
   ngOnInit() {}
@@ -23,8 +24,8 @@ export class OrderNumberComponent implements OnInit {
         this.validation = true;
       });
   }
-
   onSubmit(val) {
     this.postData(val.order);
   }
+
 }

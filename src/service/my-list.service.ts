@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Http, Response} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
-import {AllData} from 'service/dataModel';
-import {oneTrackModel} from 'service/oneTrackModel';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
@@ -24,9 +22,9 @@ export class MyListService {
     return this._http
       .post('https://vod-my-list-web-service-alex.herokuapp.com/getMovieByOrderNum/', {order_num: orderNumber})
       .map(this.extractData)
+      .do(this.logResponse)
       .catch(this.catchError)
   }
-
 
   postByGenresAndYear(genre, year) {
     return this._http
