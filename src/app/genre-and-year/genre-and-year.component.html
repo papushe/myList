@@ -1,5 +1,6 @@
-<form #f="ngForm"
-      (ngSubmit)="onSubmit(f.value)">
+<div class="row">
+  <form #form="ngForm"
+      (ngSubmit)="onSubmit(form.value)">
   <div class="row">
     <div class="col-md-4 col-sm-4 form-group">
       <select class="form-control"
@@ -35,6 +36,12 @@
     </div>
   </div>
 </form>
+</div>
+
+
+
+
+
 
 <ul *ngFor="let Data of allData">
   <li>

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {Http, Response} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import {AllData} from 'service/dataModel';
-import {AllData2} from 'service/dataModel2';
+import {oneTrackModel} from 'service/oneTrackModel';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
@@ -17,24 +17,15 @@ export class MyListService {
     return this._http
       .get('https://vod-my-list-web-service-alex.herokuapp.com/getAllMyList')
       .map(this.extractData)
-      .do(this.logResponse)
       .catch(this.catchError)
   }
-  postByOrderData(orderNumber): Promise<AllData2[]> {
+
+  postByOrderData(orderNumber) {
     return this._http
       .post('https://vod-my-list-web-service-alex.herokuapp.com/getMovieByOrderNum/', {order_num: orderNumber})
-      .toPromise()
-      .then(response => response.json() as AllData2[])
-      .catch(err => err.json());
+      .map(this.extractData)
+      .catch(this.catchError)
   }
-
-
-
-
-
-
-
-
 
 
   postByGenresAndYear(genre, year) {

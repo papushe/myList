@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MyListService} from 'service/my-list.service';
-import {AllData} from 'service/dataModel';
+import {oneTrackModel} from 'service/oneTrackModel';
 
 @Component({
   selector: 'app-genre-and-year',
@@ -9,7 +9,7 @@ import {AllData} from 'service/dataModel';
 })
 export class GenreAndYearComponent implements OnInit {
 
-  allData: AllData[];
+  randomDataModel: oneTrackModel[];
   comedyName: '';
   year: number;
   constructor(private _myListService: MyListService) {}
@@ -17,8 +17,12 @@ export class GenreAndYearComponent implements OnInit {
   ngOnInit() {
   }
   private postByGenresAndYear(a, b) {
-    this._myListService.postByGenresAndYear(a, b).subscribe(data => this.allData = data.movie);
+    this._myListService.postByGenresAndYear(a, b).subscribe(data => {
+      this.randomDataModel = data.movies
+      console.log(this.randomDataModel);
+    });
   }
+
 
   onSubmit(val) {
     this.comedyName = val.genres;

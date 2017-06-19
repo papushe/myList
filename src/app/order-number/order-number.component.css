@@ -1,1 +1,13 @@
-
+.form-control{
+  display: inline-block;
+  width: 50%;
+}
+.row{
+  margin: 10px;
+}
+h3 span{
+  float: right;
+}
+.form-group{
+  text-align: center;
+}

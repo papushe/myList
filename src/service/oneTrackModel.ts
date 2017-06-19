@@ -1,7 +1,7 @@
 /**
  * Created by papushe on 16/06/2017.
  */
- export class AllData2 {
+ export class oneTrackModel {
 
      order_num: Number;
      title: String;
