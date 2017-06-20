@@ -34,19 +34,20 @@
     <ng-template #Valid>
         <div class="panel panel-primary">
           <div class="panel-heading">
-            <h3 class="panel-title">{{trackData.title}}<span>{{trackData.order_num}}</span> </h3>
+            <h3 class="panel-title">{{trackData.title ? trackData.title : "No data to show"}}<span>{{trackData.order_num ? trackData.order_num : ""}}</span> </h3>
           </div>
           <div class="panel-body">
-            <h6><span>Status:</span> {{trackData.status}}</h6>
-            <h6><span>Language:</span> {{trackData.language}}</h6>
-            <h6><span>Run Time:</span> {{trackData.runtime}}</h6>
-            <h6><span>Country:</span> {{trackData.country}}</h6>
-            <h6><span>Genres:</span> {{trackData.genres}}</h6>
-            <h6><span>Stars:</span> {{trackData.stars}}</h6>
-            <h6><span>Year Start:</span> {{trackData.year.start}}</h6>
-            <h6><span>Year Released:</span> {{trackData.year.released}}</h6>
+            <h6><span>Status:</span> {{trackData.status ? trackData.status : ""}}</h6>
+            <h6><span>Language:</span> {{trackData.language ? trackData.language : ""}}</h6>
+            <h6><span>Run Time:</span> {{trackData.runtime ? trackData.runtime : ""}}</h6>
+            <h6><span>Country:</span> {{trackData.country ? trackData.country : ""}}</h6>
+            <h6><span>Genres:</span> {{trackData.genres ? trackData.genres : ""}}</h6>
+            <h6><span>Stars:</span> {{trackData.stars ? trackData.stars : ""}}</h6>
+            <h6><span>Year Start:</span> {{trackData.year ? trackData.year.start : ""}}</h6>
+            <h6><span>Year Released:</span> {{trackData.year ? trackData.year.released : ""}}</h6>
+            <h6><span>Year Released:</span> </h6>
             <h5><span>Some Details:</span></h5>
-            <p>{{trackData.details}}</p>
+            <p>{{trackData.details ? trackData.details : ""}}</p>
           </div>
         </div>
     </ng-template>

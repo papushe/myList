@@ -13,6 +13,7 @@ export class GenreAndYearComponent implements OnInit {
   comedyName: '';
   year: number;
   validation = false;
+  headColor = true;
   constructor(private _myListService: MyListService) {}
 
   ngOnInit() {
@@ -22,9 +23,11 @@ export class GenreAndYearComponent implements OnInit {
       this.randomDataModel = data.movies;
       if (this.randomDataModel) {
         this.validation = true;
+        this.headColor = true;
         return;
       }
       this.validation = false;
+      this.headColor = false;
     });
   }
 

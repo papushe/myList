@@ -11,3 +11,9 @@ input[type=submit]{
 #Valid{
   text-align: center;
 }
+.red{
+  color: red;
+}
+.black{
+  color: black;
+}

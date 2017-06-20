@@ -11,7 +11,6 @@ import {OneTrackModel} from 'service/OneTrackModel';
 })
 export class OrderNumberComponent implements OnInit {
 
-  // order: number;
   trackData: OneTrackModel[];
   validation = false;
   constructor(private _myListService: MyListService) {}
@@ -22,6 +21,7 @@ export class OrderNumberComponent implements OnInit {
       .subscribe(data => {
         this.trackData = data;
         this.validation = true;
+        console.log(this.validation);
       });
   }
   onSubmit(val) {

@@ -48,7 +48,7 @@
 </div>
 <div class="row">
   <span *ngIf="!validation; else Valid">
-    <h2 id="Valid">No Data to Show</h2>
+    <h2 id="Valid" [ngClass]="{'red': !headColor , 'black': headColor}">No Data to Show</h2>
   </span>
   <ng-template #Valid>
     <ul *ngFor="let Data of randomDataModel">
