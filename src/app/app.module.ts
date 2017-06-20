@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpModule} from '@angular/http';
 import {FormsModule} from '@angular/forms';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { AllDataComponent } from './all-data/all-data.component';
@@ -25,7 +26,7 @@ import {AppRoutingModule} from './app-routing.module';
     HttpModule,
     FormsModule
   ],
-  providers: [MyListService],
+  providers: [MyListService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
